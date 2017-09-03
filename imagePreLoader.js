@@ -63,15 +63,8 @@ var preLoad = {
   },
 
   /// Force a manual check on whether all images are displayed or not //
-  /// completeDiv / incompleteDiv are html class or name tags (e.g., "#finishedDisplay" / "#loadingDisplay")
-  manualCheck: function(completeDiv, incompleteDiv) {
-    if (preLoad.nProcessed == preLoad.yourImages.length) {
-      $(completeDiv).show();
-      console.log(preLoad.success);
-      console.log(preLoad.fail);
-    } else {
-      $(incompleteDiv).show();
-    }
+  manualCheck: function() {
+    return preLoad.nProcessed == preLoad.yourImages.length
   }
 
 };
