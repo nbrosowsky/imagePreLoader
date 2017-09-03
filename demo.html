@@ -23,52 +23,41 @@
     <div id="finishedLoading">
       <h2>Finished Loading!</h2>
       <div class="row">
-    <div class="col">
-    <img src=" " class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col">
-      <img src=" " class="img-fluid" alt="Responsive image">
-    </div>
-    <div class="col">
-      <img src=" " class="img-fluid" alt="Responsive image">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <img src=" " class="img-fluid" alt="Responsive image">
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
 
-    </div>
-    <div class="col">
-      <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
 
-    </div>
-    <div class="col">
-      <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-    <div class="col">
-
-    </div>
-  </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="col">
+          <img src=" " class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -78,7 +67,7 @@
   <script>
     // list of images
     var imgList = ["alecu-gabriel-331261.jpg",
-      "ales-krivec-767.jpg",
+      "milada-vigerova-35578.jpg",
       "sergio-rola-39245.jpg",
       "andy-wang-39028.jpg",
       "blake-richard-verdoorn-13988.jpg",
@@ -86,17 +75,18 @@
       "dawn-armfield-19723.jpg",
       "elizabeth-lies-20237.jpg",
       "marta-pawlik-37689.jpg",
-      "milada-vigerova-35578.jpg",
-      "nikita-burdin-1085.jpg",
-      "ales-krivec-2892.jpg"
 
+      "nikita-burdin-1085.jpg",
+      "ales-krivec-2892.jpg",
+      "ales-krivec-767.jpg"
     ];
 
 
     // append url to each image in image list and pass to preLoad.yourImages
     preLoad.addURL("images/", imgList);
     var imgDivs = document.querySelectorAll("img");
-    for (i = 0; i<= imgDivs.length-1; i++){
+    // update src for each img div
+    for (i = 0; i <= imgDivs.length - 1; i++) {
       imgDivs[i].src = preLoad.yourImages[i]
     }
 
