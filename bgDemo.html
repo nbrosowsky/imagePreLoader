@@ -27,9 +27,10 @@
     <div id="otherDisplay">
       <h2>The images are loading in the background right now</h2>
       <p>The "finished display" will not automatically show up, unless you are on the loading screen when it completes</p>
-      <h4 id="stillNotDone">Sorry, not finished yet. Check back soon.</h4>
-      <button id="check" type="button" class="btn btn-primary btn-lg">manual check</button>
-      <button id="showLoad" type="button" class="btn btn-info btn-lg">go to load screen</button>
+      <p>
+        When you hit "next", if the images are no finished loading, it will take you to the loading screen. If they are finished, it will take you to the images.
+      </p>
+      <button id="next" type="button" class="btn btn-info btn-lg">Next</button>
     </div>
     <div id="loading">
       <h2>Images are preloading now</h2>
@@ -106,26 +107,19 @@
 
     preLoad.loadImages("#loading", "#finishedLoading", "#progress");
 
-    $("#check").click(function() {
+    $("#next").click(function() {
       if (preLoad.manualCheck()) {
         $("#otherDisplay").hide();
         $("#finishedLoading").show();
 
       } else {
-        $("#stillNotDone").show();
-        setTimeout(function(){  $("#stillNotDone").hide();}, 2000)
+        $("#otherDisplay").hide();
+        $("#loading").show();
+
       }
     });
 
-    $("#showLoad").click(function() {
-      if (!preLoad.manualCheck()) {
-        $("#otherDisplay").hide();
-        $("#loading").show();
-      } else {
-        $("#otherDisplay").hide();
-        $("#finishedLoading").show();
-      }
-    })
+
   </script>
 </body>
 
