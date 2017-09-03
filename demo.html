@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Image PreLoader</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <style>
+    #finishedLoading {
+      display: none;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container" style="margin-top: 50px">
+    <div id="loading">
+      <h2>Images are preloading now</h2>
+      <h5 id="progress"></h5>
+    </div>
+    <div id="finishedLoading">
+      <h2>Finished Loading!</h2>
+      <div class="row">
+    <div class="col">
+    <img src=" " class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col">
+      <img src=" " class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col">
+      <img src=" " class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src=" " class="img-fluid" alt="Responsive image">
+
+    </div>
+    <div class="col">
+      <img src=" " class="img-fluid" alt="Responsive image">
+
+    </div>
+    <div class="col">
+      <img src=" " class="img-fluid" alt="Responsive image">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="imagePreLoader.js"></script>
+  <script>
+    // list of images
+    var imgList = ["alecu-gabriel-331261.jpg",
+      "ales-krivec-767.jpg",
+      "sergio-rola-39245.jpg",
+      "andy-wang-39028.jpg",
+      "blake-richard-verdoorn-13988.jpg",
+      "christina-sicoli-20299.jpg",
+      "dawn-armfield-19723.jpg",
+      "elizabeth-lies-20237.jpg",
+      "marta-pawlik-37689.jpg",
+      "milada-vigerova-35578.jpg",
+      "nikita-burdin-1085.jpg",
+      "ales-krivec-2892.jpg"
+
+    ];
+
+
+    // append url to each image in image list and pass to preLoad.yourImages
+    preLoad.addURL("images/", imgList);
+    var imgDivs = document.querySelectorAll("img");
+    for (i = 0; i<= imgDivs.length-1; i++){
+      imgDivs[i].src = preLoad.yourImages[i]
+    }
+
+    preLoad.loadImages("#loading", "#finishedLoading", "#progress");
+  </script>
+</body>
+
+</html>
