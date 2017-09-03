@@ -26,17 +26,17 @@
   <div class="container" style="margin-top: 50px">
     <div id="otherDisplay">
       <h2>The images are loading in the background right now</h2>
-      <h4>The "finished display" will not automatically show up, unless you are on the loading screen when it completes</h4>
+      <p>The "finished display" will not automatically show up, unless you are on the loading screen when it completes</p>
       <h4 id="stillNotDone">Sorry, not finished yet. Check back soon.</h4>
-      <button id="check" type="button" class="btn btn-primary btn-lg btn-block">Manual Check</button>
-      <button id="showLoad" type="button" class="btn btn-primary btn-lg btn-block">go to load screen</button>
+      <button id="check" type="button" class="btn btn-primary btn-lg">manual check</button>
+      <button id="showLoad" type="button" class="btn btn-info btn-lg">go to load screen</button>
     </div>
     <div id="loading">
       <h2>Images are preloading now</h2>
       <h5 id="progress"></h5>
     </div>
     <div id="finishedLoading">
-      <h2>Finished Loading!</h2>
+      <h2>Images!</h2>
       <div class="row">
         <div class="col">
           <img src=" " class="img-fluid" alt="Responsive image">
@@ -81,6 +81,7 @@
   <script src="imagePreLoader.js"></script>
   <script>
     // list of images
+    // from unsplash.com
     var imgList = ["nikita-burdin-1085.jpg",
       "milada-vigerova-35578.jpg",
       "sergio-rola-39245.jpg",
@@ -107,14 +108,21 @@
       if (preLoad.manualCheck()) {
         $("#otherDisplay").hide();
         $("#finishedLoading").show();
+
       } else {
         $("#stillNotDone").show();
+        setTimeout(function(){  $("#stillNotDone").hide();}, 3000)
       }
     });
 
-    $("#showLoad").click(function(){
-      $("#otherDisplay").hide();
-      $("#loading").show();
+    $("#showLoad").click(function() {
+      if (!preLoad.manualCheck()) {
+        $("#otherDisplay").hide();
+        $("#loading").show();
+      } else {
+        $("#otherDisplay").hide();
+        $("#finishedLoading").show();
+      }
     })
   </script>
 </body>
