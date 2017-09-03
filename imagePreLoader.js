@@ -1,6 +1,7 @@
 /////// PreLoad Images ///////
 var preLoad = {
   nProcessed: 0, //number of images checked for pre-load
+  percentage: 0,
   yourImages: [], //image array with URLs
   preImages: new Array(),
   check: new Array(),
@@ -44,8 +45,9 @@ var preLoad = {
 
   checkLoad: function() {
     this.nProcessed++;
+    this.percentage = Math.round((preLoad.nProcessed / preLoad.yourImages.length) * 100);
     // add to progress percentage //
-    $(this.progress).html(Math.round((preLoad.nProcessed / preLoad.yourImages.length) * 100) + "%");
+    $(this.progress).html(this.percentage + "%");
 
     // if loading incomplete, continue loading //
     if (preLoad.nProcessed < preLoad.yourImages.length) {
