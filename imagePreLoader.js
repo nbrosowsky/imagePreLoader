@@ -47,7 +47,8 @@ var preLoad = {
     this.nProcessed++;
     this.percentage = Math.round((preLoad.nProcessed / preLoad.yourImages.length) * 100);
     // add to progress percentage //
-    $(this.progress).html(this.percentage + "%");
+    document.querySelector(this.progress).innerHTML = this.percentage + "%";
+    // $(this.progress).html(this.percentage + "%");
 
     // if loading incomplete, continue loading //
     if (preLoad.nProcessed < preLoad.yourImages.length) {
@@ -56,9 +57,17 @@ var preLoad = {
 
     /// only display "finished" div if the viewer is on the loading screen //
     /// else do nothing on complete ///
-    if (preLoad.nProcessed == preLoad.yourImages.length && ($(this.loading).css('display') != 'none')) {
-      $(this.loading).hide();
-      $(this.finished).show();
+    var element = document.querySelector(this.loading);
+    var display = element.currentStyle ? element.currentStyle.display :
+                              getComputedStyle(element, null).display;
+                              
+    if (preLoad.nProcessed == preLoad.yourImages.length && (display != 'none')) {
+      (document.querySelector(this.loading)).style.display = 'none';
+      (document.querySelector(this.finished)).style.display = 'block';
+      //
+      //
+      // $(this.loading).hide();
+      // $(this.finished).show();
       console.log(preLoad.success);
       console.log(preLoad.fail);
     }
