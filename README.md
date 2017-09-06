@@ -1,6 +1,7 @@
 # imagePreLoader.js
 
-A simple javascript program to preload images in the background. 
+- Preload images in the background
+- can trigger loading / completed div
 
 ## Basic Usage
 
