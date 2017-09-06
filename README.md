@@ -4,7 +4,7 @@ A simple javascript program to preload images in the background.
 
 ## Basic Usage
 
-##### [DEMO](https://nbrosowsky.github.io/imagePreLoader/demo.html)
+##### [DEMO - preLoader.js](https://nbrosowsky.github.io/imagePreLoader/demo.html)
 
 ```HTML
 <div id="loadingScreen">
@@ -45,7 +45,7 @@ Therefore, you can trigger the preloader to begin at any time and only go to the
 E.g., The demo linked below triggers the preloader to begin when the page loads. When you hit next, it checks whether it is complete or not.
 If complete, it goes to the images. If incomplete it takes you to loading screen.
 
-##### [link to background loading demo](https://nbrosowsky.github.io/imagePreLoader/bgDemo.html)
+##### [DEMO - Background preLoader](https://nbrosowsky.github.io/imagePreLoader/bgDemo.html)
 
 ```javascript
 <script>
